@@ -21,6 +21,12 @@ class AppCoordinator: BaseCoordinator {
         return rootViewController;
     }()
     
+    lazy var tabBarController: UITabBarController = {
+        let viewController = UITabBarController();
+        
+        return viewController;
+    }()
+    
     // MARK: - Methods
     
     init(window: UIWindow?) {
@@ -82,10 +88,34 @@ extension AppCoordinator {
     ///
     /// In this example, we are setting-up a UITabBar based page as a private area
     func setupPrivateCoordinators() {
-        self.setupFeatureBCoordinator();
+        let coordinatorB = self.setupFeatureBCoordinator();
+        let coordinatorC = self.setupFeatureCCoordinator();
+        
+        self.tabBarController.viewControllers = [
+            coordinatorB.navigationController,
+            coordinatorC.navigationController
+        ];
+        
+        self.window?.rootViewController = self.tabBarController
     }
     
-    func setupFeatureBCoordinator() {
+    func setupFeatureBCoordinator() -> SampleFeatureBCoordinator {
+        let navigationController = UINavigationController();
         
+        let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature B");
+        
+        coordinator.start();
+        
+        return coordinator;
+    }
+    
+    func setupFeatureCCoordinator() -> SampleFeatureBCoordinator {
+        let navigationController = UINavigationController();
+        
+        let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature C");
+        
+        coordinator.start();
+        
+        return coordinator;
     }
 }

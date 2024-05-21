@@ -7,6 +7,9 @@
 
 import UIKit
 
+/// Use this protocol to define methods a root delegate coordinator must comply to
+protocol CoordinatorDelegate: AnyObject { }
+
 /// Base class for a Coordinator
 ///
 /// Each scene should have its very own coordinator. Coordinator's should be created by extending the Coordinator base class

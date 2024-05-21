@@ -7,7 +7,7 @@
 
 import Foundation
 
-/// Use this protocol to define methods a coordiantor delegate must comply to
+/// Use this protocol to define methods a coordinator delegate must comply to
 protocol ViewModelCoordinatorDelegate: AnyObject { }
 
 /// Use this protocol to define methods a view delegate must comply to

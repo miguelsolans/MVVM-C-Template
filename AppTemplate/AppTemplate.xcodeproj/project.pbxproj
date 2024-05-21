@@ -21,6 +21,9 @@
 		8BC2E5392BFD47FF007FAF4C /* SampleFeatureAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5382BFD47FF007FAF4C /* SampleFeatureAViewModel.swift */; };
 		8BC2E53B2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E53A2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift */; };
 		8BC2E53D2BFD4E4D007FAF4C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E53C2BFD4E4D007FAF4C /* BaseViewModel.swift */; };
+		8BC2E53F2BFD504F007FAF4C /* SampleFeatureB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC2E53E2BFD504F007FAF4C /* SampleFeatureB.storyboard */; };
+		8BC2E5412BFD508E007FAF4C /* SampleFeatureBCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5402BFD508E007FAF4C /* SampleFeatureBCoordinator.swift */; };
+		8BC2E5432BFD5459007FAF4C /* SampleFeatureBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5422BFD5459007FAF4C /* SampleFeatureBViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		8BC2E5382BFD47FF007FAF4C /* SampleFeatureAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureAViewModel.swift; sourceTree = "<group>"; };
 		8BC2E53A2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureBViewController.swift; sourceTree = "<group>"; };
 		8BC2E53C2BFD4E4D007FAF4C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		8BC2E53E2BFD504F007FAF4C /* SampleFeatureB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleFeatureB.storyboard; sourceTree = "<group>"; };
+		8BC2E5402BFD508E007FAF4C /* SampleFeatureBCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureBCoordinator.swift; sourceTree = "<group>"; };
+		8BC2E5422BFD5459007FAF4C /* SampleFeatureBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureBViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC2E53A2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift */,
+				8BC2E53E2BFD504F007FAF4C /* SampleFeatureB.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -212,6 +219,7 @@
 		8BC2E52C2BFD397B007FAF4C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8BC2E5422BFD5459007FAF4C /* SampleFeatureBViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 		8BC2E52D2BFD3982007FAF4C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				8BC2E5402BFD508E007FAF4C /* SampleFeatureBCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -313,6 +322,7 @@
 				8BC2E50E2BFD3842007FAF4C /* Assets.xcassets in Resources */,
 				8BC2E5222BFD390A007FAF4C /* Colors.xcassets in Resources */,
 				8BC2E5112BFD3842007FAF4C /* Base in Resources */,
+				8BC2E53F2BFD504F007FAF4C /* SampleFeatureB.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BC2E5432BFD5459007FAF4C /* SampleFeatureBViewModel.swift in Sources */,
 				8BC2E51D2BFD389F007FAF4C /* BaseCoordinator.swift in Sources */,
 				8BC2E53D2BFD4E4D007FAF4C /* BaseViewModel.swift in Sources */,
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
@@ -333,6 +344,7 @@
 				8BC2E5332BFD414B007FAF4C /* SampleFeatureAViewController.swift in Sources */,
 				8BC2E5352BFD4206007FAF4C /* SampleFeatureACoordinator.swift in Sources */,
 				8BC2E5042BFD3841007FAF4C /* SceneDelegate.swift in Sources */,
+				8BC2E5412BFD508E007FAF4C /* SampleFeatureBCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
