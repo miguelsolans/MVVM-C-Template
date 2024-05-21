@@ -19,6 +19,8 @@
 		8BC2E5352BFD4206007FAF4C /* SampleFeatureACoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5342BFD4206007FAF4C /* SampleFeatureACoordinator.swift */; };
 		8BC2E5372BFD45C8007FAF4C /* SampleFeatureA.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BC2E5362BFD45C8007FAF4C /* SampleFeatureA.storyboard */; };
 		8BC2E5392BFD47FF007FAF4C /* SampleFeatureAViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5382BFD47FF007FAF4C /* SampleFeatureAViewModel.swift */; };
+		8BC2E53B2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E53A2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift */; };
+		8BC2E53D2BFD4E4D007FAF4C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E53C2BFD4E4D007FAF4C /* BaseViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		8BC2E5342BFD4206007FAF4C /* SampleFeatureACoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureACoordinator.swift; sourceTree = "<group>"; };
 		8BC2E5362BFD45C8007FAF4C /* SampleFeatureA.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleFeatureA.storyboard; sourceTree = "<group>"; };
 		8BC2E5382BFD47FF007FAF4C /* SampleFeatureAViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureAViewModel.swift; sourceTree = "<group>"; };
+		8BC2E53A2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureBViewController.swift; sourceTree = "<group>"; };
+		8BC2E53C2BFD4E4D007FAF4C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				8BC2E51C2BFD389F007FAF4C /* BaseCoordinator.swift */,
+				8BC2E53C2BFD4E4D007FAF4C /* BaseViewModel.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 		8BC2E52B2BFD3977007FAF4C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8BC2E53A2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,8 +324,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BC2E51D2BFD389F007FAF4C /* BaseCoordinator.swift in Sources */,
+				8BC2E53D2BFD4E4D007FAF4C /* BaseViewModel.swift in Sources */,
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
 				8BC2E51A2BFD3886007FAF4C /* AppCoordinator.swift in Sources */,
+				8BC2E53B2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift in Sources */,
 				8BC2E5392BFD47FF007FAF4C /* SampleFeatureAViewModel.swift in Sources */,
 				8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */,
 				8BC2E5332BFD414B007FAF4C /* SampleFeatureAViewController.swift in Sources */,
