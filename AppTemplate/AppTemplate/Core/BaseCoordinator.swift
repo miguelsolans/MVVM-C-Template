@@ -23,20 +23,33 @@ protocol CoordinatorDelegate: AnyObject { }
 ///
 public class BaseCoordinator {
 
+    /// An array that holds reference to child coordinators
+    ///
+    /// Access is read-only outside of the class, but modifiable through_
+    ///  - `addChildCoordinator()`,
+    ///  - `removeChildCoordinator()`,
+    ///  - `removeAllChildCoordinatorsWith()` and
+    ///  - `removeAllChildCoordinators`
     private(set) var childCoordinators: [BaseCoordinator] = []
 
+    /// Override this method to define navigation and initial setup
     func start() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
 
+    /// Override this method to clean-up a coordinator
     func finish() {
         preconditionFailure("This method needs to be overriden by concrete subclass.")
     }
 
+    /// Add a child coordinator to stack of coordinators
+    /// - Parameter coordinator: child coordinator
     func addChildCoordinator(_ coordinator: BaseCoordinator) {
         childCoordinators.append(coordinator)
     }
-
+    
+    /// Remove a child coordinator from the stack of coordinators
+    /// - Parameter coordinator: child coordinator to be removed
     func removeChildCoordinator(_ coordinator: BaseCoordinator) {
         if let index = childCoordinators.firstIndex(of: coordinator) {
             childCoordinators.remove(at: index)
@@ -44,11 +57,14 @@ public class BaseCoordinator {
             print("Couldn't remove coordinator: \(coordinator). It's not a child coordinator.")
         }
     }
-
+    
+    /// Remove all coordinators of a given type from the stack of coordinators
+    /// - Parameter type: coordinator type
     func removeAllChildCoordinatorsWith<T>(type: T.Type) {
         childCoordinators = childCoordinators.filter { $0 is T  == false }
     }
 
+    /// Remove all coordinators from the stack of coordinators
     func removeAllChildCoordinators() {
         childCoordinators.removeAll()
     }
