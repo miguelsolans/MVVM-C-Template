@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol SampleFeatureBViewModelCoordinatorDelegate: AnyObject {
-}
+protocol SampleFeatureBViewModelCoordinatorDelegate: AnyObject { }
 
 protocol SampleFeatureBViewModelDelegate: AnyObject {
-    
+    func dummyUpdateWithSuccess(viewModel: SampleFeatureBViewModel);
+    func dummyUpdateWithError(viewModel: SampleFeatureBViewModel);
 }
 
 class SampleFeatureBViewModel {
@@ -24,12 +24,32 @@ class SampleFeatureBViewModel {
     
     let title: String;
     
-    init(title: String) {
+    let client: SampleBClient
+    
+    var dummyOutput: SampleBModel?
+    var dummyError: Error?
+    
+    init(title: String, client: SampleBClient) {
         self.title = title;
+        self.client = client;
     }
     
 }
 
 // MARK: - Network
 
-extension SampleFeatureBViewModel { }
+extension SampleFeatureBViewModel { 
+    public func fetchData() {
+        self.client
+            .fetchSomeData { result in
+                switch result {
+                case .success(let data):
+                    self.dummyOutput = data;
+                    self.viewDelegate?.dummyUpdateWithSuccess(viewModel: self)
+                case .failure(let error):
+                    self.dummyError = error;
+                    self.viewDelegate?.dummyUpdateWithError(viewModel: self);
+                }
+            }
+    }
+}

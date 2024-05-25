@@ -14,6 +14,14 @@ class SampleFeatureBCoordinator: BaseCoordinator {
         return UIStoryboard(name: "SampleFeatureB", bundle: nil);
     }()
     
+    let apiClient: SampleBClient = {
+        let configuration = ApiClientConfiguration();
+        
+        let client = SampleBClient(baseURL: "http://localhost:3001", configuration: configuration)
+        
+        return client;
+    }()
+    
     let title: String;
     
     init(navigationController: UINavigationController, title: String) {
@@ -36,7 +44,7 @@ class SampleFeatureBCoordinator: BaseCoordinator {
     // MARK: - ViewModel / ViewController's
     
     lazy var sampleFeatureBViewModel: SampleFeatureBViewModel = {
-        let viewModel = SampleFeatureBViewModel(title: title);
+        let viewModel = SampleFeatureBViewModel(title: title, client: apiClient);
         
         viewModel.coordinatorDelegate = self;
         

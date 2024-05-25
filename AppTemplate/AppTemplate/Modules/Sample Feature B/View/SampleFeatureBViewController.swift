@@ -9,6 +9,8 @@ import UIKit
 
 class SampleFeatureBViewController: UIViewController {
     // MARK: - Properties
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var viewModel: SampleFeatureBViewModel! {
         didSet {
@@ -21,10 +23,15 @@ class SampleFeatureBViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        self.viewModel.fetchData();
     }
 }
 
 extension SampleFeatureBViewController: SampleFeatureBViewModelDelegate {
+    func dummyUpdateWithError(viewModel: SampleFeatureBViewModel) { }
     
+    func dummyUpdateWithSuccess(viewModel: SampleFeatureBViewModel) {
+        self.titleLabel.text = viewModel.dummyOutput?.title;
+        self.messageLabel.text = viewModel.dummyOutput?.message;
+    }
 }
