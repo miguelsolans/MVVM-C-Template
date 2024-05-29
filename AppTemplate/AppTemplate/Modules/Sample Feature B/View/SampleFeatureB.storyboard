@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53M-Wf-GS6">
-                                <rect key="frame" x="171" y="414" width="51.333333333333343" height="24"/>
+                                <rect key="frame" x="24" y="414" width="345" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teS-rw-Kir">
-                                <rect key="frame" x="175.66666666666666" y="458" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teS-rw-Kir">
+                                <rect key="frame" x="20" y="458" width="353" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -34,7 +34,11 @@
                         <constraints>
                             <constraint firstItem="teS-rw-Kir" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="2Cu-pb-0JZ"/>
                             <constraint firstItem="teS-rw-Kir" firstAttribute="top" secondItem="53M-Wf-GS6" secondAttribute="bottom" constant="20" id="4eM-Ji-jAV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="teS-rw-Kir" secondAttribute="trailing" constant="20" id="6CJ-H7-QGU"/>
+                            <constraint firstItem="teS-rw-Kir" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="I82-Bn-9yH"/>
+                            <constraint firstItem="53M-Wf-GS6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="VAc-Em-yHJ"/>
                             <constraint firstItem="53M-Wf-GS6" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="XkS-d9-Za1"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="53M-Wf-GS6" secondAttribute="trailing" constant="24" id="YYp-kH-kRy"/>
                             <constraint firstItem="53M-Wf-GS6" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="gat-eg-sEd"/>
                         </constraints>
                     </view>

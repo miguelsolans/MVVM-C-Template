@@ -28,7 +28,10 @@ class SampleFeatureBViewController: UIViewController {
 }
 
 extension SampleFeatureBViewController: SampleFeatureBViewModelDelegate {
-    func dummyUpdateWithError(viewModel: SampleFeatureBViewModel) { }
+    func dummyUpdateWithError(viewModel: SampleFeatureBViewModel) {
+        self.titleLabel.text = "Error!";
+        self.messageLabel.text = viewModel.dummyError?.localizedDescription;
+    }
     
     func dummyUpdateWithSuccess(viewModel: SampleFeatureBViewModel) {
         self.titleLabel.text = viewModel.dummyOutput?.title;
