@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreKit
 
 class AppCoordinator: BaseCoordinator {
 
@@ -31,6 +32,7 @@ class AppCoordinator: BaseCoordinator {
     
     init(window: UIWindow?) {
         self.window = window
+        
     }
     
     override func start() {

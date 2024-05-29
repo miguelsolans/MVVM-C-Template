@@ -5,7 +5,7 @@
 //  Created by Miguel Solans on 21/05/2024.
 //
 
-import Foundation
+import CoreKit
 
 protocol SampleFeatureAViewModelCoordinatorDelegate: AnyObject {
     func loginDidEndWithSuccess(viewModel: SampleFeatureAViewModel);

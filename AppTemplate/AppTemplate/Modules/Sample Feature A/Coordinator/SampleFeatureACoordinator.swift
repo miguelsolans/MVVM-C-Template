@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreKit
 
 protocol SampleFeatureACoordinatorDelegate: AnyObject {
     func loginDidEndWithSuccess(coordinator: SampleFeatureACoordinator);
@@ -21,6 +22,7 @@ class SampleFeatureACoordinator: BaseCoordinator {
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+        super.init()
     }
     
     override func start() {

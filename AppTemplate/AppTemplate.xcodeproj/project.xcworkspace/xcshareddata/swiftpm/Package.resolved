@@ -1,0 +1,15 @@
+{
+  "originHash" : "2f2e8ce8a7bb4218ece673ad4b61d1016678f6e77aa5f513abc4f6b42a01b55e",
+  "pins" : [
+    {
+      "identity" : "appcorekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/miguelsolans/AppCoreKit",
+      "state" : {
+        "branch" : "main",
+        "revision" : "eafece8174c85321ebc4302ae17d016a1a691dde"
+      }
+    }
+  ],
+  "version" : 3
+}

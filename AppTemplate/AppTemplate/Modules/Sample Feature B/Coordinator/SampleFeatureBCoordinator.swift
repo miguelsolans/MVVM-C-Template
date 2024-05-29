@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreKit
 
 class SampleFeatureBCoordinator: BaseCoordinator {
     let navigationController: UINavigationController
@@ -27,6 +28,7 @@ class SampleFeatureBCoordinator: BaseCoordinator {
     init(navigationController: UINavigationController, title: String) {
         self.navigationController = navigationController
         self.title = title;
+        super.init()
     }
     
     override func start() {
