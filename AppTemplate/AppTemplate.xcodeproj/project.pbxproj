@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B5365622C09375300B3144C /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365612C09375300B3144C /* PlistHelper.swift */; };
+		8B5365642C09379400B3144C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365632C09379400B3144C /* Constants.swift */; };
 		8BC15E3F2C023D00006603AB /* SampleBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC15E3E2C023D00006603AB /* SampleBClient.swift */; };
 		8BC15E412C023D31006603AB /* SampleBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC15E402C023D31006603AB /* SampleBModel.swift */; };
 		8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
+		8B5365612C09375300B3144C /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
+		8B5365632C09379400B3144C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8BC15E3E2C023D00006603AB /* SampleBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBClient.swift; sourceTree = "<group>"; };
 		8BC15E402C023D31006603AB /* SampleBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBModel.swift; sourceTree = "<group>"; };
 		8BC2E4FE2BFD3841007FAF4C /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,7 @@
 				8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */,
 				8BC2E5032BFD3841007FAF4C /* SceneDelegate.swift */,
 				8BC2E5192BFD3886007FAF4C /* AppCoordinator.swift */,
+				8B5365632C09379400B3144C /* Constants.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -240,6 +245,7 @@
 		8BC2E52F2BFD399A007FAF4C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8B5365612C09375300B3144C /* PlistHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
 				8BC2E51A2BFD3886007FAF4C /* AppCoordinator.swift in Sources */,
 				8BC2E53B2BFD4DA2007FAF4C /* SampleFeatureBViewController.swift in Sources */,
+				8B5365642C09379400B3144C /* Constants.swift in Sources */,
 				8BC2E5392BFD47FF007FAF4C /* SampleFeatureAViewModel.swift in Sources */,
 				8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */,
 				8BC2E5332BFD414B007FAF4C /* SampleFeatureAViewController.swift in Sources */,
@@ -358,6 +365,7 @@
 				8BE035CC2C07FB03006958EA /* TabBar.swift in Sources */,
 				8BC2E5042BFD3841007FAF4C /* SceneDelegate.swift in Sources */,
 				8BC15E3F2C023D00006603AB /* SampleBClient.swift in Sources */,
+				8B5365622C09375300B3144C /* PlistHelper.swift in Sources */,
 				8BC2E5412BFD508E007FAF4C /* SampleFeatureBCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
