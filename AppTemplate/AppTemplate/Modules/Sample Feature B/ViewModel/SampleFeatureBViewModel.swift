@@ -31,6 +31,9 @@ class SampleFeatureBViewModel {
     var dummyOutput: SampleBModel?
     var dummyError: Error?
     
+    var version: String?;
+    var build: String?;
+    
     init(title: String, client: SampleBClient) {
         self.title = title;
         self.client = client;
@@ -50,6 +53,10 @@ extension SampleFeatureBViewModel {
                     self.viewDelegate?.dummyUpdateWithSuccess(viewModel: self)
                 case .failure(let error):
                     self.dummyError = error;
+                    
+                    self.version = PlistHelper.getStringValue(forKey: PlistConstants.appVersion)
+                    self.build =  PlistHelper.getStringValue(forKey: PlistConstants.appBuild)
+                    
                     self.viewDelegate?.dummyUpdateWithError(viewModel: self);
                 }
             }

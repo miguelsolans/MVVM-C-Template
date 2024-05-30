@@ -8,5 +8,8 @@
 import Foundation
 
 struct PlistConstants {
-    static let baseURL = "BaseURL"
+    static let baseURL = "BaseURL";
+    static let appBuild = "AppBuild";
+    static let appVersion = "AppVersion";
+    static let appName = "AppName";
 }
