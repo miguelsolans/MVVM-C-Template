@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		8BC15E3E2C023D00006603AB /* SampleBClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBClient.swift; sourceTree = "<group>"; };
 		8BC15E402C023D31006603AB /* SampleBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBModel.swift; sourceTree = "<group>"; };
 		8BC2E4FE2BFD3841007FAF4C /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +108,7 @@
 		8BC2E51E2BFD38D3007FAF4C /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				8B5365602C09362600B3144C /* AppStore.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -495,11 +497,12 @@
 		};
 		8BC2E5162BFD3842007FAF4C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5365602C09362600B3144C /* AppStore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "${APP_BUILD}";
 				DEVELOPMENT_TEAM = W2XGFCJV6C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppTemplate/Resources/Info.plist;
@@ -512,7 +515,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "${APP_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miguelsolans.AppTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -523,11 +526,12 @@
 		};
 		8BC2E5172BFD3842007FAF4C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B5365602C09362600B3144C /* AppStore.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = "${APP_BUILD}";
 				DEVELOPMENT_TEAM = W2XGFCJV6C;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppTemplate/Resources/Info.plist;
@@ -540,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "${APP_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = com.miguelsolans.AppTemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
