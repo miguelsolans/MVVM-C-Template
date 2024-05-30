@@ -1,0 +1,26 @@
+//
+//  Production.xcconfig
+//  AppTemplate
+//
+//  Created by Miguel Solans on 30/05/2024.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+SIMPLE_SLASH=/
+
+// App name
+APP_NAME=Enumus
+
+// App version
+APP_VERSION=1.0.0
+
+// Project build number
+APP_BUILD=20240530
+
+// Bundle identifier
+APP_BUNDLE_IDENTIFIER=com.emunus.sample.dev
+
+// Base URL for private API
+APP_PRIVATE_API=https:$(SIMPLE_SLASH)/localhost:3001

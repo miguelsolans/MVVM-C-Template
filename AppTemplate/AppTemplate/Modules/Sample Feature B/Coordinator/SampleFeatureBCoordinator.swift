@@ -18,7 +18,9 @@ class SampleFeatureBCoordinator: BaseCoordinator {
     let apiClient: SampleBClient = {
         let configuration = ApiClientConfiguration();
         
-        let client = SampleBClient(baseURL: "http://localhost:3001", configuration: configuration)
+        let baseURL = PlistManager.shared.getStringValue(forKey: PlistIdentifiers.baseURL)!;
+        
+        let client = SampleBClient(baseURL: baseURL, configuration: configuration)
         
         return client;
     }()
