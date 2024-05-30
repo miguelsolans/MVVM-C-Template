@@ -20,10 +20,15 @@ class SampleFeatureBViewController: UIViewController {
     
     override func viewDidLoad() {
         self.title = viewModel.title
+        self.view.backgroundColor = .systemTeal;
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.viewModel.fetchData();
+    }
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        self.viewModel.didTapNext();
     }
 }
 

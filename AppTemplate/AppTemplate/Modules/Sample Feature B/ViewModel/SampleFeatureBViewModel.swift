@@ -7,7 +7,9 @@
 
 import CoreKit
 
-protocol SampleFeatureBViewModelCoordinatorDelegate: AnyObject { }
+protocol SampleFeatureBViewModelCoordinatorDelegate: AnyObject {
+    func didTapNext();
+}
 
 protocol SampleFeatureBViewModelDelegate: AnyObject {
     func dummyUpdateWithSuccess(viewModel: SampleFeatureBViewModel);
@@ -17,7 +19,7 @@ protocol SampleFeatureBViewModelDelegate: AnyObject {
 class SampleFeatureBViewModel {
     
     /// Set delegate with coordinator class
-    weak var coordinatorDelegate: SampleFeatureBViewModelCoordinatorDelegate?
+    var coordinatorDelegate: SampleFeatureBViewModelCoordinatorDelegate?
     
     /// Set delegate with view class
     weak var viewDelegate: SampleFeatureBViewModelDelegate?
@@ -51,5 +53,14 @@ extension SampleFeatureBViewModel {
                     self.viewDelegate?.dummyUpdateWithError(viewModel: self);
                 }
             }
+    }
+}
+
+
+// MARK: - Actions
+
+extension SampleFeatureBViewModel {
+    func didTapNext() {
+        self.coordinatorDelegate?.didTapNext()
     }
 }

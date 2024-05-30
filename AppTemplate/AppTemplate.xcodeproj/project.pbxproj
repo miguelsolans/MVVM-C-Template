@@ -25,6 +25,7 @@
 		8BC2E5412BFD508E007FAF4C /* SampleFeatureBCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5402BFD508E007FAF4C /* SampleFeatureBCoordinator.swift */; };
 		8BC2E5432BFD5459007FAF4C /* SampleFeatureBViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5422BFD5459007FAF4C /* SampleFeatureBViewModel.swift */; };
 		8BE035C52C07DF60006958EA /* CoreKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8BE035C42C07DF60006958EA /* CoreKit */; };
+		8BE035CC2C07FB03006958EA /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE035CB2C07FB03006958EA /* TabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		8BC2E53E2BFD504F007FAF4C /* SampleFeatureB.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleFeatureB.storyboard; sourceTree = "<group>"; };
 		8BC2E5402BFD508E007FAF4C /* SampleFeatureBCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureBCoordinator.swift; sourceTree = "<group>"; };
 		8BC2E5422BFD5459007FAF4C /* SampleFeatureBViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleFeatureBViewModel.swift; sourceTree = "<group>"; };
+		8BE035CB2C07FB03006958EA /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +86,7 @@
 				8BC2E51E2BFD38D3007FAF4C /* Config */,
 				8BC2E51F2BFD38DD007FAF4C /* Resources */,
 				8BC2E5202BFD38E7007FAF4C /* Modules */,
-				8BC2E5302BFD39A9007FAF4C /* UIComponents */,
+				8BE035CA2C07FAEA006958EA /* UIComponents */,
 				8BC2E52F2BFD399A007FAF4C /* Helpers */,
 				8BC2E5312BFD39BD007FAF4C /* Managers */,
 				8BC2E50A2BFD3841007FAF4C /* AppTemplate.xcdatamodeld */,
@@ -240,18 +242,27 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		8BC2E5302BFD39A9007FAF4C /* UIComponents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = UIComponents;
-			sourceTree = "<group>";
-		};
 		8BC2E5312BFD39BD007FAF4C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		8BE035C92C07FAEA006958EA /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8BE035CB2C07FB03006958EA /* TabBar.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8BE035CA2C07FAEA006958EA /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				8BE035C92C07FAEA006958EA /* TabBar */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */,
 				8BC2E5332BFD414B007FAF4C /* SampleFeatureAViewController.swift in Sources */,
 				8BC2E5352BFD4206007FAF4C /* SampleFeatureACoordinator.swift in Sources */,
+				8BE035CC2C07FB03006958EA /* TabBar.swift in Sources */,
 				8BC2E5042BFD3841007FAF4C /* SceneDelegate.swift in Sources */,
 				8BC15E3F2C023D00006603AB /* SampleBClient.swift in Sources */,
 				8BC2E5412BFD508E007FAF4C /* SampleFeatureBCoordinator.swift in Sources */,

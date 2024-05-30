@@ -32,11 +32,7 @@ class SampleFeatureBCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let viewController = storyboard.instantiateViewController(withIdentifier: "SampleFeatureBViewController") as! SampleFeatureBViewController;
-        
-        viewController.viewModel = self.sampleFeatureBViewModel;
-        
-        self.navigationController.viewControllers = [viewController];
+        self.navigationController.pushViewController(sampleFeatureViewController, animated: true)
     }
     
     override func finish() {
@@ -52,10 +48,41 @@ class SampleFeatureBCoordinator: BaseCoordinator {
         
         return viewModel
     }()
+    
+    lazy var sampleFeatureViewController = {
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SampleFeatureBViewController") as! SampleFeatureBViewController;
+        
+        viewController.viewModel = self.sampleFeatureBViewModel;
+        
+        viewController.tabBarItem.title = self.title;
+        
+        return viewController;
+    }();
+    
+    lazy var anotherSampleFeatureViewController = {
+        let viewController = storyboard.instantiateViewController(withIdentifier: "SampleFeatureBViewController") as! SampleFeatureBViewController;
+        
+        viewController.hidesBottomBarWhenPushed = true
+        viewController.viewModel = self.sampleFeatureBViewModel;
+        
+        return viewController;
+    }();
 }
 
 extension SampleFeatureBCoordinator: SampleFeatureBViewModelCoordinatorDelegate {
+    func didTapNext() {
+        self.goToAnotherPage()
+    }
+    
     func loginDidEndWithSuccess(viewModel: SampleFeatureAViewModel) {
         
+    }
+}
+
+// MARK: - Navigation
+extension SampleFeatureBCoordinator {
+    public func goToAnotherPage() {
+        
+        self.navigationController.pushViewController(anotherSampleFeatureViewController, animated: true)
     }
 }

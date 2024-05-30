@@ -22,8 +22,8 @@ class AppCoordinator: BaseCoordinator {
         return rootViewController;
     }()
     
-    lazy var tabBarController: UITabBarController = {
-        let viewController = UITabBarController();
+    lazy var tabBarController: TabBar = {
+        let viewController = TabBar();
         
         return viewController;
     }()
