@@ -8,7 +8,14 @@
 import UIKit
 import CoreKit
 
+protocol SampleFeatureBCoordinatorDelegate: AnyObject {
+    func logoutEndWithSuccess(coordinator: SampleFeatureBCoordinator);
+}
+
 class SampleFeatureBCoordinator: BaseCoordinator {
+    
+    weak var delegate: SampleFeatureBCoordinatorDelegate?
+    
     let navigationController: UINavigationController
     
     let storyboard: UIStoryboard = {
@@ -74,6 +81,10 @@ class SampleFeatureBCoordinator: BaseCoordinator {
 extension SampleFeatureBCoordinator: SampleFeatureBViewModelCoordinatorDelegate {
     func didTapNext() {
         self.goToAnotherPage()
+    }
+    
+    func didSignOut() {
+        
     }
     
     func loginDidEndWithSuccess(viewModel: SampleFeatureAViewModel) {

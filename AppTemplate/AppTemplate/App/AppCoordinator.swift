@@ -7,6 +7,8 @@
 
 import UIKit
 import CoreKit
+import GoogleSignIn
+
 
 class AppCoordinator: BaseCoordinator {
 
@@ -41,6 +43,7 @@ class AppCoordinator: BaseCoordinator {
         window.rootViewController = self.rootViewController;
         window.makeKeyAndVisible();
         
+        // self.checkAuth();
         self.setupPublicCoordinators();
     }
     
@@ -48,25 +51,43 @@ class AppCoordinator: BaseCoordinator {
         
     }
     
+    fileprivate func checkAuth() {
+        // Override point for customization after application launch.
+        
+        // Try to restore sign-in state of users already sign-in with Google
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if((error != nil) || (user == nil)) {
+                // Show app signed-out state
+                print("Google Auth | Signed-out state");
+                self.setupPublicCoordinators();
+            } else {
+                // Show App signed-in state
+                print("Google Auth | Signed-in state");
+                self.setupPrivateCoordinators()
+            }
+        }
+    }
+    
 }
 
 // MARK: - Public Area Coordinator
-extension AppCoordinator: SampleFeatureACoordinatorDelegate {
+extension AppCoordinator: PublicAreaCoordinatorDelegate {
     
     /// Use this extension to setup public coordinators, which do not require user authentication
     ///
     /// In this example, we are setting-up a blank UIViewController with a single action
     func setupPublicCoordinators() {
-        let coordinator = self.setupFeatureACoordinator();
+        let coordinator = self.setupWelcomeCoordinator();
         
         self.window?.rootViewController = coordinator.navigationController;
     }
     
-    func setupFeatureACoordinator() -> SampleFeatureACoordinator {
+    func setupWelcomeCoordinator() -> PublicAreaCoordinator {
         let navigationController = UINavigationController();
         
-        let coordinator = SampleFeatureACoordinator(navigationController: navigationController);
-        
+        let coordinator = PublicAreaCoordinator(navigationController: navigationController);
+
         coordinator.delegate = self;
         
         self.addChildCoordinator(coordinator);
@@ -76,11 +97,12 @@ extension AppCoordinator: SampleFeatureACoordinatorDelegate {
         return coordinator;
     }
     
-    func loginDidEndWithSuccess(coordinator: SampleFeatureACoordinator) {
+    func coordinatorDidFinish(_ coordinator: PublicAreaCoordinator) {
         self.removeChildCoordinator(coordinator);
         
         self.setupPrivateCoordinators();
     }
+    
 }
 
 // MARK: - Private Area Coordinator
@@ -106,6 +128,8 @@ extension AppCoordinator {
         
         let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature B");
         
+        coordinator.delegate = self;
+        
         coordinator.start();
         
         return coordinator;
@@ -119,5 +143,12 @@ extension AppCoordinator {
         coordinator.start();
         
         return coordinator;
+    }
+}
+
+
+extension AppCoordinator: SampleFeatureBCoordinatorDelegate {
+    func logoutEndWithSuccess(coordinator: SampleFeatureBCoordinator) {
+        self.setupPublicCoordinators()
     }
 }

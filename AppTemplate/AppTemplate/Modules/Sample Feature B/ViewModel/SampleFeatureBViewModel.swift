@@ -6,9 +6,11 @@
 //
 
 import CoreKit
+import GoogleSignIn
 
 protocol SampleFeatureBViewModelCoordinatorDelegate: AnyObject {
     func didTapNext();
+    func didSignOut();
 }
 
 protocol SampleFeatureBViewModelDelegate: AnyObject {
@@ -68,6 +70,12 @@ extension SampleFeatureBViewModel {
 
 extension SampleFeatureBViewModel {
     func didTapNext() {
-        self.coordinatorDelegate?.didTapNext()
+        GIDSignIn.sharedInstance.signOut()
+        
+        let result = GIDSignIn.sharedInstance.hasPreviousSignIn()
+        
+        if(!result) {
+            self.coordinatorDelegate?.didSignOut()
+        }
     }
 }

@@ -21,3 +21,9 @@ APP_NAME=Enumus
 
 // Base endpoint for private API
 APP_BASE_API=http:${SIMPLE_SLASH}/localhost:3001
+
+// Google Sign-in client identifier
+GID_CLIENT_ID=663375116040-cbovpv02sseees0jbiedu4n0fr74oior.apps.googleusercontent.com
+
+// Google Sign-in client reversed identifier
+GID_REVERSED_ID=com.googleusercontent.apps.663375116040-cbovpv02sseees0jbiedu4n0fr74oior

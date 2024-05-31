@@ -13,3 +13,9 @@ struct PlistConstants {
     static let appVersion = "AppVersion";
     static let appName = "AppName";
 }
+
+struct StoryboardConstants {
+    static let welcome = "Welcome";
+    static let signIn = "SignIn";
+    static let profile = "Profile";
+}
