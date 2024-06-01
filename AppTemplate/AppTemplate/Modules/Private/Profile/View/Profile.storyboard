@@ -30,9 +30,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOM-Rn-gMt">
-                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
+                                <rect key="frame" x="157.66666666666666" y="408.66666666666669" width="78" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lar-YK-RJK"/>
                                 </connections>

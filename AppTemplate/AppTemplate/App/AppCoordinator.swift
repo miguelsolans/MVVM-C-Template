@@ -10,8 +10,7 @@ import CoreKit
 import GoogleSignIn
 
 
-class AppCoordinator: BaseCoordinator {
-
+class AppCoordinator: BaseCoordinator  {
     
     // MARK: - Properties
     let window: UIWindow?
@@ -43,8 +42,7 @@ class AppCoordinator: BaseCoordinator {
         window.rootViewController = self.rootViewController;
         window.makeKeyAndVisible();
         
-        // self.checkAuth();
-        self.setupPublicCoordinators();
+        self.checkAuth();
     }
     
     override func finish() {
@@ -106,12 +104,30 @@ extension AppCoordinator: PublicAreaCoordinatorDelegate {
 }
 
 // MARK: - Private Area Coordinator
-extension AppCoordinator {
+extension AppCoordinator: PrivateAreaCoordinatorDelegate {
+    
+    func setupPrivateCoordinators() {
+        let navigationController = UINavigationController();
+        
+        let coordinator = PrivateAreaCoordinator(navigationController: navigationController);
+        
+        coordinator.delegate = self;
+        
+        coordinator.start();
+        
+        self.window?.rootViewController = coordinator.navigationController;
+        
+    }
+    
+    func coordinatorDidFinish(_ coordinator: PrivateAreaCoordinator) {
+        self.removeChildCoordinator(self);
+        self.setupPublicCoordinators();
+    }
     
     /// Use this extension to setup private coordinators which require user authentication
     ///
     /// In this example, we are setting-up a UITabBar based page as a private area
-    func setupPrivateCoordinators() {
+    /*func setupPrivateCoordinators() {
         let coordinatorB = self.setupFeatureBCoordinator();
         let coordinatorC = self.setupFeatureCCoordinator();
         
@@ -121,7 +137,7 @@ extension AppCoordinator {
         ];
         
         self.window?.rootViewController = self.tabBarController
-    }
+    }*/
     
     func setupFeatureBCoordinator() -> SampleFeatureBCoordinator {
         let navigationController = UINavigationController();

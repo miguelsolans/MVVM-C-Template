@@ -6,24 +6,41 @@
 //
 
 import UIKit
-import GoogleSignIn
 
 class ProfileViewController: UIViewController {
     
+    var viewModel: ProfileViewModel! {
+        didSet {
+            viewModel.viewDelegate = self;
+        }
+    }
+    
     @IBOutlet weak var usernameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.viewModel.getUserInfo()
     }
     
     @IBAction func logoutButtonTapped(_ sender: Any) {
         
-        GIDSignIn.sharedInstance.signOut();
+        self.viewModel.logout();
         
-        let result = GIDSignIn.sharedInstance.hasPreviousSignIn();
-        
-        // TODO: Change coordinator
     }
 
+}
+
+
+extension ProfileViewController: ProfileViewModelDelegate {
+    func logoutDidFinishWithError() {
+        
+    }
+    
+    func updateWithUserName(_ userName: String) {
+        self.usernameLabel.text = userName;
+    }
+    
 }
