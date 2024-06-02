@@ -16,6 +16,8 @@ class PublicAreaCoordinator: BaseCoordinator {
     
     weak var delegate: PublicAreaCoordinatorDelegate?;
     
+    var signInViewModel: SignInViewModel?;
+    
     let navigationController: UINavigationController
     
     let welcomeStoryboard = UIStoryboard(name: StoryboardConstants.welcome, bundle: nil)
@@ -48,13 +50,11 @@ class PublicAreaCoordinator: BaseCoordinator {
         return viewController;
     }()
     
+    
     lazy var signInViewController: SignInViewController = {
         let viewController = signInStoryboard.instantiateViewController(identifier: "SignInViewController") as! SignInViewController
         
-        let viewModel = SignInViewModel();
-        viewModel.coordinatorDelegate = self;
-        
-        viewController.viewModel = viewModel;
+        viewController.viewModel = signInViewModel;
         
         return viewController;
     }()
@@ -85,14 +85,10 @@ extension PublicAreaCoordinator {
     
 }
 
+// MARK: - Welcome Coordinator delegates
+
 extension PublicAreaCoordinator: WelcomeViewModelCoordinatorDelegate {
     func welcomeDidEndWithSuccess() {
         self.goToLoginPage();
-    }
-}
-
-extension PublicAreaCoordinator: SignInViewModelCoordinatorDelegate {
-    func loginDidEndWithSuccess() {
-        self.finish();
     }
 }

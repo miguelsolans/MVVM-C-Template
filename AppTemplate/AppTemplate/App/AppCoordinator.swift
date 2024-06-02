@@ -7,13 +7,18 @@
 
 import UIKit
 import CoreKit
-import GoogleSignIn
 
 
 class AppCoordinator: BaseCoordinator  {
     
     // MARK: - Properties
     let window: UIWindow?
+    
+    lazy var clientConfiguration: ApiClientConfiguration = {
+        let configuration = ApiClientConfiguration();
+        
+        return configuration;
+    }();
     
     lazy var rootViewController: UINavigationController = {
         let rootViewController = UINavigationController();
@@ -49,22 +54,22 @@ class AppCoordinator: BaseCoordinator  {
         
     }
     
+    // MARK: - ViewModel's / ViewController's
+    
+    lazy var signInViewModel: SignInViewModel = {
+        
+        let client = SignInClient(baseURL: "", configuration: clientConfiguration)
+        
+        let viewModel = SignInViewModel(client: client)
+        
+        viewModel.coordinatorDelegate = self;
+        
+        return viewModel;
+    }()
+    
     fileprivate func checkAuth() {
         // Override point for customization after application launch.
-        
-        // Try to restore sign-in state of users already sign-in with Google
-        
-        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-            if((error != nil) || (user == nil)) {
-                // Show app signed-out state
-                print("Google Auth | Signed-out state");
-                self.setupPublicCoordinators();
-            } else {
-                // Show App signed-in state
-                print("Google Auth | Signed-in state");
-                self.setupPrivateCoordinators()
-            }
-        }
+        self.signInViewModel.restoreLogin()
     }
     
 }
@@ -86,6 +91,7 @@ extension AppCoordinator: PublicAreaCoordinatorDelegate {
         
         let coordinator = PublicAreaCoordinator(navigationController: navigationController);
 
+        coordinator.signInViewModel = self.signInViewModel;
         coordinator.delegate = self;
         
         self.addChildCoordinator(coordinator);
@@ -97,8 +103,6 @@ extension AppCoordinator: PublicAreaCoordinatorDelegate {
     
     func coordinatorDidFinish(_ coordinator: PublicAreaCoordinator) {
         self.removeChildCoordinator(coordinator);
-        
-        self.setupPrivateCoordinators();
     }
     
 }
@@ -121,50 +125,20 @@ extension AppCoordinator: PrivateAreaCoordinatorDelegate {
     
     func coordinatorDidFinish(_ coordinator: PrivateAreaCoordinator) {
         self.removeChildCoordinator(coordinator);
+        
         self.setupPublicCoordinators();
-    }
-    
-    /// Use this extension to setup private coordinators which require user authentication
-    ///
-    /// In this example, we are setting-up a UITabBar based page as a private area
-    /*func setupPrivateCoordinators() {
-        let coordinatorB = self.setupFeatureBCoordinator();
-        let coordinatorC = self.setupFeatureCCoordinator();
-        
-        self.tabBarController.viewControllers = [
-            coordinatorB.navigationController,
-            coordinatorC.navigationController
-        ];
-        
-        self.window?.rootViewController = self.tabBarController
-    }*/
-    
-    func setupFeatureBCoordinator() -> SampleFeatureBCoordinator {
-        let navigationController = UINavigationController();
-        
-        let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature B");
-        
-        coordinator.delegate = self;
-        
-        coordinator.start();
-        
-        return coordinator;
-    }
-    
-    func setupFeatureCCoordinator() -> SampleFeatureBCoordinator {
-        let navigationController = UINavigationController();
-        
-        let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature C");
-        
-        coordinator.start();
-        
-        return coordinator;
     }
 }
 
-
-extension AppCoordinator: SampleFeatureBCoordinatorDelegate {
-    func logoutEndWithSuccess(coordinator: SampleFeatureBCoordinator) {
-        self.setupPublicCoordinators()
+extension AppCoordinator: SignInViewModelCoordinatorDelegate {
+    func loginDidEndWithSuccess() {
+        self.setupPrivateCoordinators();
+    }
+    
+    func loginRestoreDidEndWithError(error: Error) {
+        self.setupPublicCoordinators();
+    }
+    
+    func onboardRequirementDidEndWithSuccess(onboarding requiresOnboarding: Bool) {
     }
 }

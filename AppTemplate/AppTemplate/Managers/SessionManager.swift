@@ -31,12 +31,29 @@ class SessionManager: NSObject {
         }
     }
     
+    public func restorePreviousSignIn(with provider: AuthenticationProvider, completion: @escaping (Result<AuthSessionData, Error>) -> Void) {
+        switch provider {
+        case .google:
+            self.restorePreviousGoogleSignIn(completion: completion)
+            break;
+        case .facebook:
+            break;
+        case .username:
+            break;
+        }
+    }
+    
+    
+}
+
+// MARK: - Google authentication
+
+extension SessionManager {
     fileprivate func signInWithGoogle(from viewController: UIViewController, completion: @escaping (Result<AuthSessionData, Error>) -> Void) {
         GIDSignIn.sharedInstance.signIn(withPresenting: viewController) { user, error in
             
             if let error = error {
                 completion(.failure(error))
-                return
             } else {
                 let sessionInfo = AuthSessionData(googleUser: user?.user, provider: .google)
                 
@@ -44,10 +61,28 @@ class SessionManager: NSObject {
                 
                 completion(.success(sessionInfo))
             }
-            
         }
     }
     
+    fileprivate func restorePreviousGoogleSignIn(completion: @escaping (Result<AuthSessionData, Error>) -> Void) {
+        
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                let sessionInfo = AuthSessionData(googleUser: user, provider: .google)
+                
+                self.sessionData = sessionInfo;
+                
+                completion(.success(sessionInfo))
+            }
+        }
+    }
+}
+
+
+// MARK: - Facebook authentication
+extension SessionManager {
     fileprivate func signInWithFacebook() {
         
     }
