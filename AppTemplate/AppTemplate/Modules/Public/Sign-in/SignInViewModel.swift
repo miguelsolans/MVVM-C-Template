@@ -29,12 +29,12 @@ class SignInViewModel: NSObject {
     func signInWithGoogle() {
         guard let viewController = UIApplication.shared.windows.first?.rootViewController else { return }
         
-        GIDSignIn.sharedInstance.signIn(withPresenting: viewController) { user, error in
-            if let error = error {
-                self.viewDelegate?.loginDidEndWithError(error);
-            } else {
-                self.viewDelegate?.loginDidEndWithSuccess();
-                self.coordinatorDelegate?.loginDidEndWithSuccess();
+        SessionManager.shared.signIn(with: .google, viewController: viewController) { result in
+            switch result {
+            case .success(let authSessionData):
+                self.viewDelegate?.loginDidEndWithSuccess()
+            case .failure(let error):
+                self.viewDelegate?.loginDidEndWithError(error)
             }
         }
     }

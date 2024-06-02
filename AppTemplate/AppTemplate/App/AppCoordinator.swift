@@ -120,7 +120,7 @@ extension AppCoordinator: PrivateAreaCoordinatorDelegate {
     }
     
     func coordinatorDidFinish(_ coordinator: PrivateAreaCoordinator) {
-        self.removeChildCoordinator(self);
+        self.removeChildCoordinator(coordinator);
         self.setupPublicCoordinators();
     }
     

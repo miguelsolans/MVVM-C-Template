@@ -13,6 +13,8 @@
 		8B27E8782C0A93610089BBFF /* WelcomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8772C0A93610089BBFF /* WelcomeViewModel.swift */; };
 		8B27E87A2C0A9A260089BBFF /* PrivateAreaCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8792C0A9A260089BBFF /* PrivateAreaCoordinator.swift */; };
 		8B27E87C2C0A9B490089BBFF /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E87B2C0A9B490089BBFF /* ProfileViewModel.swift */; };
+		8B27E8832C0C801C0089BBFF /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8822C0C801C0089BBFF /* SessionManager.swift */; };
+		8B27E8852C0C82CC0089BBFF /* AuthSessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */; };
 		8B5365622C09375300B3144C /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365612C09375300B3144C /* PlistHelper.swift */; };
 		8B5365642C09379400B3144C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365632C09379400B3144C /* Constants.swift */; };
 		8BC15E3F2C023D00006603AB /* SampleBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC15E3E2C023D00006603AB /* SampleBClient.swift */; };
@@ -51,6 +53,8 @@
 		8B27E8772C0A93610089BBFF /* WelcomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewModel.swift; sourceTree = "<group>"; };
 		8B27E8792C0A9A260089BBFF /* PrivateAreaCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateAreaCoordinator.swift; sourceTree = "<group>"; };
 		8B27E87B2C0A9B490089BBFF /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8B27E8822C0C801C0089BBFF /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionData.swift; sourceTree = "<group>"; };
 		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		8B5365612C09375300B3144C /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		8B5365632C09379400B3144C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 		8BC2E5312BFD39BD007FAF4C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8B27E8822C0C801C0089BBFF /* SessionManager.swift */,
+				8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				8BC2E5432BFD5459007FAF4C /* SampleFeatureBViewModel.swift in Sources */,
 				8B27E8712C0A8C320089BBFF /* WelcomeViewController.swift in Sources */,
 				8BC15E412C023D31006603AB /* SampleBModel.swift in Sources */,
+				8B27E8832C0C801C0089BBFF /* SessionManager.swift in Sources */,
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
 				8BC2E51A2BFD3886007FAF4C /* AppCoordinator.swift in Sources */,
 				8BD89A142C0A86570022CD3A /* SignInViewModel.swift in Sources */,
@@ -477,6 +484,7 @@
 				8BC15E3F2C023D00006603AB /* SampleBClient.swift in Sources */,
 				8B5365622C09375300B3144C /* PlistHelper.swift in Sources */,
 				8BD899FF2C0A689F0022CD3A /* PublicAreaCoordinator.swift in Sources */,
+				8B27E8852C0C82CC0089BBFF /* AuthSessionData.swift in Sources */,
 				8BC2E5412BFD508E007FAF4C /* SampleFeatureBCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
