@@ -17,8 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGC-wT-yOc">
-                                <rect key="frame" x="144.66666666666666" y="119" width="104" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGC-wT-yOc">
+                                <rect key="frame" x="165.66666666666666" y="119" width="62" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,9 +30,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOM-Rn-gMt">
-                                <rect key="frame" x="157.66666666666666" y="408.66666666666669" width="78" height="35"/>
+                                <rect key="frame" x="159" y="408.66666666666669" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
                                     <action selector="logoutButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="lar-YK-RJK"/>
                                 </connections>
@@ -50,6 +50,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logoutButton" destination="UOM-Rn-gMt" id="bbq-9J-c1F"/>
+                        <outlet property="titleLabel" destination="UGC-wT-yOc" id="6fj-dR-2Hx"/>
                         <outlet property="usernameLabel" destination="xSV-uE-ZlA" id="Q3V-Cu-NJh"/>
                     </connections>
                 </viewController>

@@ -17,6 +17,8 @@
 		8B27E8852C0C82CC0089BBFF /* AuthSessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */; };
 		8B27E8912C0CAA760089BBFF /* SignInClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8902C0CAA760089BBFF /* SignInClient.swift */; };
 		8B27E8942C0CAB910089BBFF /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8932C0CAB910089BBFF /* SignInModel.swift */; };
+		8B4283942C165251003F07B7 /* Welcome.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283932C165251003F07B7 /* Welcome.xcstrings */; };
+		8B4283962C165515003F07B7 /* Profile.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283952C165515003F07B7 /* Profile.xcstrings */; };
 		8B5365622C09375300B3144C /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365612C09375300B3144C /* PlistHelper.swift */; };
 		8B5365642C09379400B3144C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365632C09379400B3144C /* Constants.swift */; };
 		8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionData.swift; sourceTree = "<group>"; };
 		8B27E8902C0CAA760089BBFF /* SignInClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInClient.swift; sourceTree = "<group>"; };
 		8B27E8932C0CAB910089BBFF /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		8B4283932C165251003F07B7 /* Welcome.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Welcome.xcstrings; sourceTree = "<group>"; };
+		8B4283952C165515003F07B7 /* Profile.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Profile.xcstrings; sourceTree = "<group>"; };
 		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		8B5365612C09375300B3144C /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		8B5365632C09379400B3144C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			children = (
 				8B27E8702C0A8C320089BBFF /* WelcomeViewController.swift */,
 				8B27E8732C0A8C5F0089BBFF /* Welcome.storyboard */,
+				8B4283932C165251003F07B7 /* Welcome.xcstrings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 			children = (
 				8BD89A072C0A7DA00022CD3A /* ProfileViewController.swift */,
 				8BD89A0B2C0A7DD70022CD3A /* Profile.storyboard */,
+				8B4283952C165515003F07B7 /* Profile.xcstrings */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -396,8 +402,10 @@
 			files = (
 				8BD89A182C0A89F70022CD3A /* SignIn.storyboard in Resources */,
 				8BC2E50E2BFD3842007FAF4C /* Assets.xcassets in Resources */,
+				8B4283942C165251003F07B7 /* Welcome.xcstrings in Resources */,
 				8BC2E5222BFD390A007FAF4C /* Colors.xcassets in Resources */,
 				8BC2E5112BFD3842007FAF4C /* Base in Resources */,
+				8B4283962C165515003F07B7 /* Profile.xcstrings in Resources */,
 				8B27E8742C0A8C5F0089BBFF /* Welcome.storyboard in Resources */,
 				8BD89A0C2C0A7DD70022CD3A /* Profile.storyboard in Resources */,
 			);
