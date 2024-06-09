@@ -2,12 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>GIDClientID</key>
+	<string>${GID_CLIENT_ID}</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>${GID_REVERSED_ID}</string>
+			</array>
+		</dict>
+	</array>
 	<key>AppBuild</key>
 	<string>${APP_BUILD}</string>
-	<key>AppVersion</key>
-	<string>${APP_VERSION}</string>
 	<key>AppName</key>
 	<string>${APP_NAME}</string>
+	<key>AppVersion</key>
+	<string>${APP_VERSION}</string>
 	<key>BaseURL</key>
 	<string>${APP_BASE_API}</string>
 	<key>UIApplicationSceneManifest</key>

@@ -8,11 +8,17 @@
 import UIKit
 import CoreKit
 
-class AppCoordinator: BaseCoordinator {
 
+class AppCoordinator: BaseCoordinator  {
     
     // MARK: - Properties
     let window: UIWindow?
+    
+    lazy var clientConfiguration: ApiClientConfiguration = {
+        let configuration = ApiClientConfiguration();
+        
+        return configuration;
+    }();
     
     lazy var rootViewController: UINavigationController = {
         let rootViewController = UINavigationController();
@@ -41,32 +47,51 @@ class AppCoordinator: BaseCoordinator {
         window.rootViewController = self.rootViewController;
         window.makeKeyAndVisible();
         
-        self.setupPublicCoordinators();
+        self.checkAuth();
     }
     
     override func finish() {
         
     }
     
+    // MARK: - ViewModel's / ViewController's
+    
+    lazy var signInViewModel: SignInViewModel = {
+        
+        let client = SignInClient(baseURL: "", configuration: clientConfiguration)
+        
+        let viewModel = SignInViewModel(client: client)
+        
+        viewModel.coordinatorDelegate = self;
+        
+        return viewModel;
+    }()
+    
+    fileprivate func checkAuth() {
+        // Override point for customization after application launch.
+        self.signInViewModel.restoreLogin()
+    }
+    
 }
 
 // MARK: - Public Area Coordinator
-extension AppCoordinator: SampleFeatureACoordinatorDelegate {
+extension AppCoordinator: PublicAreaCoordinatorDelegate {
     
     /// Use this extension to setup public coordinators, which do not require user authentication
     ///
     /// In this example, we are setting-up a blank UIViewController with a single action
     func setupPublicCoordinators() {
-        let coordinator = self.setupFeatureACoordinator();
+        let coordinator = self.setupWelcomeCoordinator();
         
         self.window?.rootViewController = coordinator.navigationController;
     }
     
-    func setupFeatureACoordinator() -> SampleFeatureACoordinator {
+    func setupWelcomeCoordinator() -> PublicAreaCoordinator {
         let navigationController = UINavigationController();
         
-        let coordinator = SampleFeatureACoordinator(navigationController: navigationController);
-        
+        let coordinator = PublicAreaCoordinator(navigationController: navigationController);
+
+        coordinator.signInViewModel = self.signInViewModel;
         coordinator.delegate = self;
         
         self.addChildCoordinator(coordinator);
@@ -76,48 +101,44 @@ extension AppCoordinator: SampleFeatureACoordinatorDelegate {
         return coordinator;
     }
     
-    func loginDidEndWithSuccess(coordinator: SampleFeatureACoordinator) {
+    func coordinatorDidFinish(_ coordinator: PublicAreaCoordinator) {
         self.removeChildCoordinator(coordinator);
-        
-        self.setupPrivateCoordinators();
     }
+    
 }
 
 // MARK: - Private Area Coordinator
-extension AppCoordinator {
+extension AppCoordinator: PrivateAreaCoordinatorDelegate {
     
-    /// Use this extension to setup private coordinators which require user authentication
-    ///
-    /// In this example, we are setting-up a UITabBar based page as a private area
     func setupPrivateCoordinators() {
-        let coordinatorB = self.setupFeatureBCoordinator();
-        let coordinatorC = self.setupFeatureCCoordinator();
-        
-        self.tabBarController.viewControllers = [
-            coordinatorB.navigationController,
-            coordinatorC.navigationController
-        ];
-        
-        self.window?.rootViewController = self.tabBarController
-    }
-    
-    func setupFeatureBCoordinator() -> SampleFeatureBCoordinator {
         let navigationController = UINavigationController();
         
-        let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature B");
+        let coordinator = PrivateAreaCoordinator(navigationController: navigationController);
+        
+        coordinator.delegate = self;
         
         coordinator.start();
         
-        return coordinator;
+        self.window?.rootViewController = coordinator.navigationController;
+        
     }
     
-    func setupFeatureCCoordinator() -> SampleFeatureBCoordinator {
-        let navigationController = UINavigationController();
+    func coordinatorDidFinish(_ coordinator: PrivateAreaCoordinator) {
+        self.removeChildCoordinator(coordinator);
         
-        let coordinator = SampleFeatureBCoordinator(navigationController: navigationController, title: "Feature C");
-        
-        coordinator.start();
-        
-        return coordinator;
+        self.setupPublicCoordinators();
+    }
+}
+
+extension AppCoordinator: SignInViewModelCoordinatorDelegate {
+    func loginDidEndWithSuccess() {
+        self.setupPrivateCoordinators();
+    }
+    
+    func loginRestoreDidEndWithError(error: Error) {
+        self.setupPublicCoordinators();
+    }
+    
+    func onboardRequirementDidEndWithSuccess(onboarding requiresOnboarding: Bool) {
     }
 }
