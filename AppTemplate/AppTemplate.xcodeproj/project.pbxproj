@@ -19,6 +19,11 @@
 		8B27E8942C0CAB910089BBFF /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8932C0CAB910089BBFF /* SignInModel.swift */; };
 		8B4283942C165251003F07B7 /* Welcome.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283932C165251003F07B7 /* Welcome.xcstrings */; };
 		8B4283962C165515003F07B7 /* Profile.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283952C165515003F07B7 /* Profile.xcstrings */; };
+		8B42839C2C165728003F07B7 /* OnboardingSelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42839B2C165728003F07B7 /* OnboardingSelfieViewController.swift */; };
+		8B42839E2C1657B4003F07B7 /* SelfieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42839D2C1657B4003F07B7 /* SelfieViewModel.swift */; };
+		8B4283A02C165DC9003F07B7 /* Selfie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B42839F2C165DC9003F07B7 /* Selfie.storyboard */; };
+		8B4283A62C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283A52C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard */; };
+		8B4283A82C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4283A72C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift */; };
 		8B5365622C09375300B3144C /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365612C09375300B3144C /* PlistHelper.swift */; };
 		8B5365642C09379400B3144C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365632C09379400B3144C /* Constants.swift */; };
 		8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */; };
@@ -53,6 +58,11 @@
 		8B27E8932C0CAB910089BBFF /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		8B4283932C165251003F07B7 /* Welcome.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Welcome.xcstrings; sourceTree = "<group>"; };
 		8B4283952C165515003F07B7 /* Profile.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Profile.xcstrings; sourceTree = "<group>"; };
+		8B42839B2C165728003F07B7 /* OnboardingSelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelfieViewController.swift; sourceTree = "<group>"; };
+		8B42839D2C1657B4003F07B7 /* SelfieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewModel.swift; sourceTree = "<group>"; };
+		8B42839F2C165DC9003F07B7 /* Selfie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Selfie.storyboard; sourceTree = "<group>"; };
+		8B4283A52C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingPersonalInformation.storyboard; sourceTree = "<group>"; };
+		8B4283A72C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPersonalInformationViewController.swift; sourceTree = "<group>"; };
 		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		8B5365612C09375300B3144C /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		8B5365632C09379400B3144C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -172,6 +182,73 @@
 				8B4283952C165515003F07B7 /* Profile.xcstrings */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8B4283972C1656F2003F07B7 /* Selfie */ = {
+			isa = PBXGroup;
+			children = (
+				8B4283982C1656FF003F07B7 /* Model */,
+				8B4283992C165703003F07B7 /* ViewModel */,
+				8B42839A2C165709003F07B7 /* View */,
+			);
+			path = Selfie;
+			sourceTree = "<group>";
+		};
+		8B4283982C1656FF003F07B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B4283992C165703003F07B7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8B42839D2C1657B4003F07B7 /* SelfieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8B42839A2C165709003F07B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B42839B2C165728003F07B7 /* OnboardingSelfieViewController.swift */,
+				8B42839F2C165DC9003F07B7 /* Selfie.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B4283A12C174609003F07B7 /* Personal Info */ = {
+			isa = PBXGroup;
+			children = (
+				8B4283A22C174619003F07B7 /* Model */,
+				8B4283A42C174621003F07B7 /* ViewModel */,
+				8B4283A32C17461D003F07B7 /* View */,
+			);
+			path = "Personal Info";
+			sourceTree = "<group>";
+		};
+		8B4283A22C174619003F07B7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8B4283A32C17461D003F07B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8B4283A52C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard */,
+				8B4283A72C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8B4283A42C174621003F07B7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		8BC2E4F52BFD3841007FAF4C = {
@@ -295,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				8B27E8752C0A915E0089BBFF /* OnboardingCoordinator.swift */,
+				8B4283972C1656F2003F07B7 /* Selfie */,
+				8B4283A12C174609003F07B7 /* Personal Info */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -404,6 +483,8 @@
 				8BC2E50E2BFD3842007FAF4C /* Assets.xcassets in Resources */,
 				8B4283942C165251003F07B7 /* Welcome.xcstrings in Resources */,
 				8BC2E5222BFD390A007FAF4C /* Colors.xcassets in Resources */,
+				8B4283A62C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard in Resources */,
+				8B4283A02C165DC9003F07B7 /* Selfie.storyboard in Resources */,
 				8BC2E5112BFD3842007FAF4C /* Base in Resources */,
 				8B4283962C165515003F07B7 /* Profile.xcstrings in Resources */,
 				8B27E8742C0A8C5F0089BBFF /* Welcome.storyboard in Resources */,
@@ -420,6 +501,7 @@
 			files = (
 				8B27E8712C0A8C320089BBFF /* WelcomeViewController.swift in Sources */,
 				8B27E8832C0C801C0089BBFF /* SessionManager.swift in Sources */,
+				8B42839E2C1657B4003F07B7 /* SelfieViewModel.swift in Sources */,
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
 				8BC2E51A2BFD3886007FAF4C /* AppCoordinator.swift in Sources */,
 				8BD89A142C0A86570022CD3A /* SignInViewModel.swift in Sources */,
@@ -427,6 +509,7 @@
 				8B27E87A2C0A9A260089BBFF /* PrivateAreaCoordinator.swift in Sources */,
 				8B5365642C09379400B3144C /* Constants.swift in Sources */,
 				8BD89A082C0A7DA00022CD3A /* ProfileViewController.swift in Sources */,
+				8B42839C2C165728003F07B7 /* OnboardingSelfieViewController.swift in Sources */,
 				8B27E8762C0A915E0089BBFF /* OnboardingCoordinator.swift in Sources */,
 				8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */,
 				8BD89A122C0A86420022CD3A /* SignInViewController.swift in Sources */,
@@ -438,6 +521,7 @@
 				8B5365622C09375300B3144C /* PlistHelper.swift in Sources */,
 				8BD899FF2C0A689F0022CD3A /* PublicAreaCoordinator.swift in Sources */,
 				8B27E8852C0C82CC0089BBFF /* AuthSessionData.swift in Sources */,
+				8B4283A82C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +666,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${APP_BUILD}";
-				DEVELOPMENT_TEAM = W2XGFCJV6C;
+				DEVELOPMENT_TEAM = C3Q6972CQL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppTemplate/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -611,7 +695,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${APP_BUILD}";
-				DEVELOPMENT_TEAM = W2XGFCJV6C;
+				DEVELOPMENT_TEAM = C3Q6972CQL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AppTemplate/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

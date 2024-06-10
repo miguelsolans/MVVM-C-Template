@@ -13,6 +13,16 @@
         }
       }
     },
+    "welcome_register_button" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
+          }
+        }
+      }
+    },
     "welcome_subtitle_placeholder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -31,6 +41,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Welcome to"
+          }
+        }
+      }
+    },
+    "welcone_register_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Register"
           }
         }
       }

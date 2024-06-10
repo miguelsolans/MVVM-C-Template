@@ -58,6 +58,7 @@ class PublicAreaCoordinator: BaseCoordinator {
         
         return viewController;
     }()
+    
 }
 
 // MARK: - Navigation
@@ -81,6 +82,11 @@ extension PublicAreaCoordinator {
     /// Go to register account page
     func goToRegisterPage() {
         
+        let coordinator = OnboardingCoordinator(navigationController: navigationController);
+        
+        self.addChildCoordinator(coordinator);
+        
+        coordinator.start();
     }
     
 }
@@ -88,7 +94,11 @@ extension PublicAreaCoordinator {
 // MARK: - Welcome Coordinator delegates
 
 extension PublicAreaCoordinator: WelcomeViewModelCoordinatorDelegate {
-    func welcomeDidEndWithSuccess() {
+    func navigateToLoginPage() {
         self.goToLoginPage();
+    }
+    
+    func navigateToRegisterPage() {
+        self.goToRegisterPage();
     }
 }

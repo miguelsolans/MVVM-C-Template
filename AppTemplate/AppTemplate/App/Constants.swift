@@ -18,4 +18,6 @@ struct StoryboardConstants {
     static let welcome = "Welcome";
     static let signIn = "SignIn";
     static let profile = "Profile";
+    static let selfie = "Selfie";
+    static let personalInfo = "OnboardingPersonalInformation";
 }
