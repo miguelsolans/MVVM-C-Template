@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B11E7E22C18E32F0043319C /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B11E7E12C18E32F0043319C /* CameraManager.swift */; };
 		8B27E8712C0A8C320089BBFF /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8702C0A8C320089BBFF /* WelcomeViewController.swift */; };
 		8B27E8742C0A8C5F0089BBFF /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B27E8732C0A8C5F0089BBFF /* Welcome.storyboard */; };
 		8B27E8762C0A915E0089BBFF /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B27E8752C0A915E0089BBFF /* OnboardingCoordinator.swift */; };
@@ -26,6 +27,7 @@
 		8B4283A82C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4283A72C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift */; };
 		8B5365622C09375300B3144C /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365612C09375300B3144C /* PlistHelper.swift */; };
 		8B5365642C09379400B3144C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365632C09379400B3144C /* Constants.swift */; };
+		8BA077012C18C62100C345EB /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA077002C18C62100C345EB /* PermissionManager.swift */; };
 		8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */; };
 		8BC2E5042BFD3841007FAF4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5032BFD3841007FAF4C /* SceneDelegate.swift */; };
 		8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E50A2BFD3841007FAF4C /* AppTemplate.xcdatamodeld */; };
@@ -46,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B11E7E12C18E32F0043319C /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		8B27E8702C0A8C320089BBFF /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		8B27E8732C0A8C5F0089BBFF /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		8B27E8752C0A915E0089BBFF /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
@@ -66,6 +69,7 @@
 		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		8B5365612C09375300B3144C /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		8B5365632C09379400B3144C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8BA077002C18C62100C345EB /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		8BC2E4FE2BFD3841007FAF4C /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BC2E5032BFD3841007FAF4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 			children = (
 				8B27E8822C0C801C0089BBFF /* SessionManager.swift */,
 				8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */,
+				8BA077002C18C62100C345EB /* PermissionManager.swift */,
+				8B11E7E12C18E32F0043319C /* CameraManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				8B27E8832C0C801C0089BBFF /* SessionManager.swift in Sources */,
 				8B42839E2C1657B4003F07B7 /* SelfieViewModel.swift in Sources */,
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
+				8B11E7E22C18E32F0043319C /* CameraManager.swift in Sources */,
 				8BC2E51A2BFD3886007FAF4C /* AppCoordinator.swift in Sources */,
 				8BD89A142C0A86570022CD3A /* SignInViewModel.swift in Sources */,
 				8B27E87C2C0A9B490089BBFF /* ProfileViewModel.swift in Sources */,
@@ -513,6 +520,7 @@
 				8B27E8762C0A915E0089BBFF /* OnboardingCoordinator.swift in Sources */,
 				8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */,
 				8BD89A122C0A86420022CD3A /* SignInViewController.swift in Sources */,
+				8BA077012C18C62100C345EB /* PermissionManager.swift in Sources */,
 				8B27E8942C0CAB910089BBFF /* SignInModel.swift in Sources */,
 				8BE035CC2C07FB03006958EA /* TabBar.swift in Sources */,
 				8BC2E5042BFD3841007FAF4C /* SceneDelegate.swift in Sources */,

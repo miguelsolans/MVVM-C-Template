@@ -17,27 +17,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selfie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcY-G8-wEr">
-                                <rect key="frame" x="159.33333333333334" y="408.66666666666669" width="74.666666666666657" height="35"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="29"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-K0-kkE">
+                                <rect key="frame" x="168.66666666666666" y="763" width="55.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera.shutter.button" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="snapSelfieButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hRY-gA-yL7"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-MO-ZH9">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="748"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wcY-G8-wEr" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="GNK-HP-aKE"/>
-                            <constraint firstItem="wcY-G8-wEr" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="yhs-7d-IWe"/>
+                            <constraint firstItem="Dpv-MO-ZH9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5x1-jK-diS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QQC-K0-kkE" secondAttribute="bottom" constant="20" id="YY6-Ay-ypp"/>
+                            <constraint firstItem="QQC-K0-kkE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dfB-fB-iSA"/>
+                            <constraint firstItem="Dpv-MO-ZH9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="iyp-il-coD"/>
+                            <constraint firstItem="QQC-K0-kkE" firstAttribute="top" secondItem="Dpv-MO-ZH9" secondAttribute="bottom" constant="15" id="kQc-kW-RsO"/>
+                            <constraint firstItem="Dpv-MO-ZH9" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="q9a-XG-YiV"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="selfieView" destination="Dpv-MO-ZH9" id="oW7-4Y-Q1d"/>
+                        <outlet property="snapSelfieButton" destination="QQC-K0-kkE" id="DFJ-eh-jfu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="4"/>
+            <point key="canvasLocation" x="-127.48091603053435" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
+        <image name="camera.shutter.button" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
