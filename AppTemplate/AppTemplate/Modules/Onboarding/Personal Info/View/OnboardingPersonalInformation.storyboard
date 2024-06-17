@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CNf-HR-A9K">
-                                <rect key="frame" x="20" y="59" width="353" height="142"/>
+                                <rect key="frame" x="20" y="79" width="353" height="142"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qaa-xK-yIN">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
@@ -38,12 +38,15 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWi-JJ-RtZ">
-                                <rect key="frame" x="20" y="241" width="353" height="44"/>
+                                <rect key="frame" x="20" y="261" width="353" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2K8-oA-hpJ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Continue"/>
+                                <connections>
+                                    <action selector="confirmButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="91r-iR-sgP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -52,11 +55,16 @@
                             <constraint firstItem="CNf-HR-A9K" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ETP-Y4-b6O"/>
                             <constraint firstItem="gWi-JJ-RtZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="HLG-Hs-aMx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CNf-HR-A9K" secondAttribute="trailing" constant="20" id="HWZ-ME-1sW"/>
-                            <constraint firstItem="CNf-HR-A9K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="amJ-Nb-gb9"/>
+                            <constraint firstItem="CNf-HR-A9K" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="amJ-Nb-gb9"/>
                             <constraint firstItem="gWi-JJ-RtZ" firstAttribute="top" secondItem="CNf-HR-A9K" secondAttribute="bottom" constant="40" id="bmT-tc-cCS"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gWi-JJ-RtZ" secondAttribute="trailing" constant="20" id="l6J-6P-GGa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="CwS-VA-TWG" id="ylk-sO-87I"/>
+                        <outlet property="firstNameTextField" destination="qaa-xK-yIN" id="QPD-hg-rtw"/>
+                        <outlet property="lastNameTextField" destination="OGY-2a-8Bl" id="XeP-lX-XyT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

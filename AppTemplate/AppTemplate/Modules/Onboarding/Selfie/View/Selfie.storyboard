@@ -17,31 +17,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-K0-kkE">
-                                <rect key="frame" x="168.66666666666666" y="763" width="55.666666666666657" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="camera.shutter.button" catalog="system" title=""/>
-                                <connections>
-                                    <action selector="snapSelfieButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hRY-gA-yL7"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dpv-MO-ZH9">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="748"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kfC-xz-D5y">
+                                <rect key="frame" x="20" y="740" width="353" height="64"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQC-K0-kkE">
+                                        <rect key="frame" x="0.0" y="0.0" width="104.33333333333333" height="64"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="camera.circle" catalog="system" title="">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="34"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="snapSelfieButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hRY-gA-yL7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KJx-qB-8em">
+                                        <rect key="frame" x="124.33333333333334" y="0.0" width="104.33333333333334" height="64"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="checkmark.gobackward" catalog="system" title="">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="34"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="O2X-nq-us4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wy-xV-YXa">
+                                        <rect key="frame" x="248.66666666666671" y="0.0" width="104.33333333333334" height="64"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="repeat.circle" catalog="system" title="">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="34"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="repeatButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VKv-2R-paW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="NGY-YW-RQC"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Dpv-MO-ZH9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="5x1-jK-diS"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="QQC-K0-kkE" secondAttribute="bottom" constant="20" id="YY6-Ay-ypp"/>
-                            <constraint firstItem="QQC-K0-kkE" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="dfB-fB-iSA"/>
+                            <constraint firstItem="kfC-xz-D5y" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="G2l-JF-QBT"/>
+                            <constraint firstItem="kfC-xz-D5y" firstAttribute="top" secondItem="Dpv-MO-ZH9" secondAttribute="bottom" constant="24" id="HK1-Uk-0ib"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="kfC-xz-D5y" secondAttribute="trailing" constant="20" id="euH-Qo-Our"/>
                             <constraint firstItem="Dpv-MO-ZH9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="iyp-il-coD"/>
-                            <constraint firstItem="QQC-K0-kkE" firstAttribute="top" secondItem="Dpv-MO-ZH9" secondAttribute="bottom" constant="15" id="kQc-kW-RsO"/>
                             <constraint firstItem="Dpv-MO-ZH9" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="q9a-XG-YiV"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="kfC-xz-D5y" secondAttribute="bottom" constant="14" id="qOG-Pa-nK8"/>
+                            <constraint firstItem="kfC-xz-D5y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="yCm-CF-6at"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="confirmButton" destination="KJx-qB-8em" id="IjF-ri-9ci"/>
+                        <outlet property="repeatButton" destination="1Wy-xV-YXa" id="PZp-n8-MY7"/>
                         <outlet property="selfieView" destination="Dpv-MO-ZH9" id="oW7-4Y-Q1d"/>
                         <outlet property="snapSelfieButton" destination="QQC-K0-kkE" id="DFJ-eh-jfu"/>
                     </connections>
@@ -52,7 +86,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.shutter.button" catalog="system" width="128" height="108"/>
+        <image name="camera.circle" catalog="system" width="128" height="123"/>
+        <image name="checkmark.gobackward" catalog="system" width="119" height="128"/>
+        <image name="repeat.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

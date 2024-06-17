@@ -21,12 +21,15 @@
 		8B4283942C165251003F07B7 /* Welcome.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283932C165251003F07B7 /* Welcome.xcstrings */; };
 		8B4283962C165515003F07B7 /* Profile.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283952C165515003F07B7 /* Profile.xcstrings */; };
 		8B42839C2C165728003F07B7 /* OnboardingSelfieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42839B2C165728003F07B7 /* OnboardingSelfieViewController.swift */; };
-		8B42839E2C1657B4003F07B7 /* SelfieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42839D2C1657B4003F07B7 /* SelfieViewModel.swift */; };
+		8B42839E2C1657B4003F07B7 /* OnboardingSelfieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B42839D2C1657B4003F07B7 /* OnboardingSelfieViewModel.swift */; };
 		8B4283A02C165DC9003F07B7 /* Selfie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B42839F2C165DC9003F07B7 /* Selfie.storyboard */; };
 		8B4283A62C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B4283A52C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard */; };
 		8B4283A82C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4283A72C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift */; };
 		8B5365622C09375300B3144C /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365612C09375300B3144C /* PlistHelper.swift */; };
 		8B5365642C09379400B3144C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5365632C09379400B3144C /* Constants.swift */; };
+		8B7767882C1CB9980019B419 /* PersonalInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7767872C1CB9980019B419 /* PersonalInfoModel.swift */; };
+		8B77678A2C1CBA330019B419 /* OnboardingPersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7767892C1CBA330019B419 /* OnboardingPersonalInfoViewModel.swift */; };
+		8B77678C2C2097E60019B419 /* UIDevice+Simulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B77678B2C2097E60019B419 /* UIDevice+Simulator.swift */; };
 		8BA077012C18C62100C345EB /* PermissionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA077002C18C62100C345EB /* PermissionManager.swift */; };
 		8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */; };
 		8BC2E5042BFD3841007FAF4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BC2E5032BFD3841007FAF4C /* SceneDelegate.swift */; };
@@ -59,16 +62,20 @@
 		8B27E8842C0C82CC0089BBFF /* AuthSessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionData.swift; sourceTree = "<group>"; };
 		8B27E8902C0CAA760089BBFF /* SignInClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInClient.swift; sourceTree = "<group>"; };
 		8B27E8932C0CAB910089BBFF /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
+		8B2876352C1B80A500071732 /* Vision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Vision.framework; path = System/Library/Frameworks/Vision.framework; sourceTree = SDKROOT; };
 		8B4283932C165251003F07B7 /* Welcome.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Welcome.xcstrings; sourceTree = "<group>"; };
 		8B4283952C165515003F07B7 /* Profile.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Profile.xcstrings; sourceTree = "<group>"; };
 		8B42839B2C165728003F07B7 /* OnboardingSelfieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelfieViewController.swift; sourceTree = "<group>"; };
-		8B42839D2C1657B4003F07B7 /* SelfieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieViewModel.swift; sourceTree = "<group>"; };
+		8B42839D2C1657B4003F07B7 /* OnboardingSelfieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSelfieViewModel.swift; sourceTree = "<group>"; };
 		8B42839F2C165DC9003F07B7 /* Selfie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Selfie.storyboard; sourceTree = "<group>"; };
 		8B4283A52C174BE8003F07B7 /* OnboardingPersonalInformation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingPersonalInformation.storyboard; sourceTree = "<group>"; };
 		8B4283A72C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPersonalInformationViewController.swift; sourceTree = "<group>"; };
 		8B5365602C09362600B3144C /* AppStore.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppStore.xcconfig; sourceTree = "<group>"; };
 		8B5365612C09375300B3144C /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		8B5365632C09379400B3144C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B7767872C1CB9980019B419 /* PersonalInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoModel.swift; sourceTree = "<group>"; };
+		8B7767892C1CBA330019B419 /* OnboardingPersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPersonalInfoViewModel.swift; sourceTree = "<group>"; };
+		8B77678B2C2097E60019B419 /* UIDevice+Simulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Simulator.swift"; sourceTree = "<group>"; };
 		8BA077002C18C62100C345EB /* PermissionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionManager.swift; sourceTree = "<group>"; };
 		8BC2E4FE2BFD3841007FAF4C /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BC2E5012BFD3841007FAF4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +195,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		8B2876342C1B80A500071732 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B2876352C1B80A500071732 /* Vision.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8B4283972C1656F2003F07B7 /* Selfie */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,7 +223,7 @@
 		8B4283992C165703003F07B7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8B42839D2C1657B4003F07B7 /* SelfieViewModel.swift */,
+				8B42839D2C1657B4003F07B7 /* OnboardingSelfieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -235,6 +250,7 @@
 		8B4283A22C174619003F07B7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8B7767872C1CB9980019B419 /* PersonalInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +267,7 @@
 		8B4283A42C174621003F07B7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8B7767892C1CBA330019B419 /* OnboardingPersonalInfoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,6 +277,7 @@
 			children = (
 				8BC2E5002BFD3841007FAF4C /* AppTemplate */,
 				8BC2E4FF2BFD3841007FAF4C /* Products */,
+				8B2876342C1B80A500071732 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -330,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5365612C09375300B3144C /* PlistHelper.swift */,
+				8B77678B2C2097E60019B419 /* UIDevice+Simulator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -505,9 +524,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B77678C2C2097E60019B419 /* UIDevice+Simulator.swift in Sources */,
 				8B27E8712C0A8C320089BBFF /* WelcomeViewController.swift in Sources */,
 				8B27E8832C0C801C0089BBFF /* SessionManager.swift in Sources */,
-				8B42839E2C1657B4003F07B7 /* SelfieViewModel.swift in Sources */,
+				8B42839E2C1657B4003F07B7 /* OnboardingSelfieViewModel.swift in Sources */,
 				8BC2E50C2BFD3841007FAF4C /* AppTemplate.xcdatamodeld in Sources */,
 				8B11E7E22C18E32F0043319C /* CameraManager.swift in Sources */,
 				8BC2E51A2BFD3886007FAF4C /* AppCoordinator.swift in Sources */,
@@ -518,6 +538,7 @@
 				8BD89A082C0A7DA00022CD3A /* ProfileViewController.swift in Sources */,
 				8B42839C2C165728003F07B7 /* OnboardingSelfieViewController.swift in Sources */,
 				8B27E8762C0A915E0089BBFF /* OnboardingCoordinator.swift in Sources */,
+				8B7767882C1CB9980019B419 /* PersonalInfoModel.swift in Sources */,
 				8BC2E5022BFD3841007FAF4C /* AppDelegate.swift in Sources */,
 				8BD89A122C0A86420022CD3A /* SignInViewController.swift in Sources */,
 				8BA077012C18C62100C345EB /* PermissionManager.swift in Sources */,
@@ -527,6 +548,7 @@
 				8B27E8912C0CAA760089BBFF /* SignInClient.swift in Sources */,
 				8B27E8782C0A93610089BBFF /* WelcomeViewModel.swift in Sources */,
 				8B5365622C09375300B3144C /* PlistHelper.swift in Sources */,
+				8B77678A2C1CBA330019B419 /* OnboardingPersonalInfoViewModel.swift in Sources */,
 				8BD899FF2C0A689F0022CD3A /* PublicAreaCoordinator.swift in Sources */,
 				8B27E8852C0C82CC0089BBFF /* AuthSessionData.swift in Sources */,
 				8B4283A82C17551B003F07B7 /* OnboardingPersonalInformationViewController.swift in Sources */,

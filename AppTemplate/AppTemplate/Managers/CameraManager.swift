@@ -8,38 +8,47 @@
 import UIKit
 import AVFoundation
 
+protocol CameraManagerDelegate: AnyObject {
+    func cameraDidBeginSessionWithPreviewLater(_ previewLayer: AVCaptureVideoPreviewLayer);
+    func cameraDidStopSessionFromPreviewLayer(_ previewLayer: AVCaptureVideoPreviewLayer);
+    func cameraDidCaptureImage(_ image: UIImage);
+}
+
 class CameraManager: NSObject {
     
-    var viewController: UIViewController!
+    fileprivate var viewController: UIViewController!
     
     // MARK: - Camera
-    var captureSession: AVCaptureSession!
-    var frontCamera: AVCaptureDevice!
-    var frontInput: AVCaptureInput!
-    var previewLayer : AVCaptureVideoPreviewLayer!
-    var videoOutput : AVCaptureVideoDataOutput!
+    fileprivate var captureSession: AVCaptureSession!
+    fileprivate var frontCamera: AVCaptureDevice!
+    fileprivate var frontInput: AVCaptureInput!
+    fileprivate var previewLayer : AVCaptureVideoPreviewLayer!
+    fileprivate var videoOutput : AVCaptureVideoDataOutput!
     
     // MARK: Photo snap
-    var takePhoto: Bool = false;
-    var onPhotoCaptured: ((UIImage) -> Void)?
-    var onPreviewLayer: ((AVCaptureVideoPreviewLayer) -> Void)?
+    public var takePhoto: Bool = false;
+    public weak var delegate: CameraManagerDelegate?
     
-    func setup(from viewController: UIViewController, onPreviewLayer: @escaping ((AVCaptureVideoPreviewLayer) -> Void), onPhotoCaptured: @escaping ((UIImage) -> Void )) {
+    fileprivate var onPhotoCaptured: ((UIImage) -> Void)?
+    fileprivate var onPreviewLayer: ((AVCaptureVideoPreviewLayer) -> Void)?
+    
+    /// Setup and start camera capture
+    /// - Parameters:
+    ///   - viewController: UIViewController who requested camera to start
+    ///   - onPreviewLayer: Code block executed upon camera output initialization
+    ///   - onPhotoCaptured: Code block upon photo capture
+    public func setup(from viewController: UIViewController, onPreviewLayer: @escaping ((AVCaptureVideoPreviewLayer) -> Void), onPhotoCaptured: @escaping ((UIImage) -> Void )) {
         self.viewController = viewController;
         self.onPhotoCaptured = onPhotoCaptured;
         self.onPreviewLayer = onPreviewLayer;
-        
-        self.startCapture()
-    }
-
-    
-    func startCapture() {
-        PermissionManager.shared.requestAccess(to: .camera, from: self.viewController) { accessGranted in
-            self.setupAndCaptureSession()
-        }
     }
     
-    func setupAndCaptureSession() {
+    public func setup(from viewController: UIViewController) {
+        self.viewController = viewController
+    }
+    
+    /// Setup camera session and start capturing data
+    fileprivate func setupAndCaptureSession() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession = AVCaptureSession();
             self.captureSession.beginConfiguration();
@@ -61,7 +70,8 @@ class CameraManager: NSObject {
         }
     }
     
-    func setupSessionInput() {
+    /// Setup camera input session
+    fileprivate func setupSessionInput() {
         if let device = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .front) {
             frontCamera = device;
         }
@@ -75,7 +85,8 @@ class CameraManager: NSObject {
         captureSession.addInput(frontInput);
     }
     
-    func setupOutput() {
+    /// Setup camera output
+    fileprivate func setupOutput() {
         self.videoOutput = AVCaptureVideoDataOutput();
         let videoQueue = DispatchQueue(label: "videoQueue", qos: .userInteractive)
         self.videoOutput.setSampleBufferDelegate(self, queue: videoQueue)
@@ -85,22 +96,42 @@ class CameraManager: NSObject {
         }
     }
     
-    func setupPreviewLayer() {
+    /// Setup preview layer
+    ///
+    /// Preview layer should be implemented by the calling ViewController / UIView
+    fileprivate func setupPreviewLayer() {
         self.previewLayer = AVCaptureVideoPreviewLayer(session: captureSession);
         
         self.onPreviewLayer?(previewLayer);
-        // self.previewView.layer.insertSublayer(previewLayer, at: 0);
-        
-        // self.previewView.superview?.layer.insertSublayer(previewLayer, above: self.previewView.layer) // .layer.insertSublayer(previewLayer, above: selfieView.layer);
-        
-        // self.previewLayer.frame = selfieView.layer.frame
-    }
-    
-    func stopSession() {
-        self.captureSession.stopRunning();
+        self.delegate?.cameraDidBeginSessionWithPreviewLater(previewLayer);
     }
 }
 
+extension CameraManager {
+    /// Start image capture
+    public func startCapture() {
+        
+        if(UIDevice.current.isSimulator) {
+            
+            
+        } else {
+            PermissionManager.shared.requestAccess(to: .camera, from: self.viewController) { accessGranted in
+                self.setupAndCaptureSession()
+            }
+        }
+        
+    }
+    
+    /// Stop image capture
+    public func stopSession() {
+        self.captureSession.stopRunning();
+        
+        self.delegate?.cameraDidStopSessionFromPreviewLayer(previewLayer);
+        
+        self.takePhoto = false;
+    }
+    
+}
 
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
@@ -117,11 +148,13 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         
         let uiImage = UIImage(ciImage: ciImage);
         
-        self.onPhotoCaptured?(uiImage);
         
         DispatchQueue.main.async {
-            self.takePhoto = false;
             self.stopSession();
+            self.delegate?.cameraDidCaptureImage(uiImage);
+            
+            self.takePhoto = false;
+            
         }
     }
 }
