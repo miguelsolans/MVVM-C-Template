@@ -116,7 +116,6 @@ extension OnboardingSelfieViewController: OnboardingSelfieViewModelDelegate {
         
         self.present(alert, animated: true);
         
-        self.cameraManager.startCapture()
     }
     
     func imageValidationDidEndWithSuccess() {

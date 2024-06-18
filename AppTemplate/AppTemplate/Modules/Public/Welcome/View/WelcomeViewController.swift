@@ -5,9 +5,10 @@
 //  Created by Miguel Solans on 31/05/2024.
 //
 
+import CoreKit
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -23,10 +24,11 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.titleLabel.text = NSLocalizedString("welcome_title_placeholder", tableName:"Welcome", comment: "");
-        self.subtitleLabel.text = NSLocalizedString("welcome_subtitle_placeholder", tableName:"Welcome", comment: "");
-        self.registerButton.setTitle(NSLocalizedString("welcome_register_button", tableName:"Welcome", comment: ""), for: .normal)
-        self.loginButton.setTitle(NSLocalizedString("welcome_login_button", tableName:"Welcome", comment: ""), for: .normal);
+        
+        self.titleLabel.text = localizedString(forKey: "welcome_title_placeholder") // NSLocalizedString("welcome_title_placeholder", tableName:"Welcome", comment: "");
+        self.subtitleLabel.text = localizedString(forKey: "welcome_subtitle_placeholder");
+        self.registerButton.setTitle(localizedString(forKey:"welcome_register_button"), for: .normal)
+        self.loginButton.setTitle(localizedString(forKey: "welcome_login_button"), for: .normal);
     }
     
     @IBAction func registerButtonTapped(_ sender: Any) {
